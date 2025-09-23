@@ -5,31 +5,51 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+        for(int j : tabell){
+            System.out.print(j  + " ");
+        }
 
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-	}
+        String result = "";
+        for (int i = 0; i < tabell.length; i ++) {
+            result += tabell[i];
+            if (i < tabell.length - 1) result += ", ";
+        }
+        System.out.print("[" + result + "]");
+        return result;
+    }
 
-	// c)
-	public static int summer(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
-	}
+    // c)
+    public static int summer(int[] tabell) {
+
+        int sum = 0;
+        System.out.print("[");
+        for (int j : tabell) {
+            System.out.print(j + " ");
+            sum += j;
+        }
+        System.out.println("]");
+        System.out.println("summen av tabellen er " + sum);
+        return sum;
+    }
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
-
+        boolean liktTall = false;
+        for(int i : tabell){
+            if(i == tall){
+                liktTall = true;
+                break;
+            }
+        }
+        System.out.println(liktTall);
+        return liktTall;
 	}
 
 	// e)
