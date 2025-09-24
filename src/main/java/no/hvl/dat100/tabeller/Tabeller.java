@@ -12,15 +12,18 @@ public class Tabeller {
 	}
 
 	// b)
-	public static String tilStreng(int[] tabell) {
+    public static String tilStreng(int[] tabell) {
 
-        String result = "";
-        for (int i = 0; i < tabell.length; i ++) {
-            result += tabell[i];
-            if (i < tabell.length - 1) result += ", ";
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < tabell.length; i++) {
+            sb.append(tabell[i]);
+            if (i < tabell.length - 1) {
+                sb.append(","); // add comma between numbers
+            }
         }
-        System.out.print("[" + result + "]");
-        return result;
+        sb.append("]");
+        return sb.toString();
     }
 
 
@@ -53,11 +56,18 @@ public class Tabeller {
 	}
 
 	// e)
-	public static int posisjonTall(int[] tabell, int tall) {
+    public static int posisjonTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
-	}
+
+        for(int i = 0; i < tabell.length; i++) {
+            if (tall == tabell[i]) {
+                System.out.println(tall + " funnet på  index " + i);
+                return i;
+            }
+        }
+        System.out.println("-1");
+        return -1;
+    }
 
 	// f)
 	public static int[] reverser(int[] tabell) {
