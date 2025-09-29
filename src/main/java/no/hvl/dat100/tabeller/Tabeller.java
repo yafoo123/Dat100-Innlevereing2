@@ -70,24 +70,40 @@ public class Tabeller {
     }
 
 	// f)
-	public static int[] reverser(int[] tabell) {
+    public static int[] reverser(int[] tabell) {
+        int size = tabell.length;
+        int[] tabell1 = new int[size];
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
-	}
+        int j = 0;
+        for (int i = tabell.length - 1; i >= 0; i--) {
+            tabell1[j] = tabell[i];
+            j++;
+        }
+        return tabell1;
+    }
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+        for(int i = 0; i < tabell.length - 1; i++){
+            if(tabell [i] > tabell[i + 1]){
+                return false;
+            }
+        }
+        return true;
 	}
 
 	// h)
-	public static int[] settSammen(int[] tabell1, int[] tabell2) {
+    public static int[] settSammen(int[] tabell1, int[] tabell2) {
+        int size = tabell1.length + tabell2.length;
+        int[] tabell3 = new int[size];
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
-
-	}
+        for(int i = 0; i < tabell1.length; i++){
+            tabell3[i] = tabell1[i];
+        }
+        for(int i = 0; i < tabell2.length; i++){
+            tabell3[tabell1.length + i] = tabell2[i];
+        }
+        return tabell3;
+    }
 }
