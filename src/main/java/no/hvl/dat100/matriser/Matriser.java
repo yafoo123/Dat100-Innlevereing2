@@ -16,14 +16,14 @@ public class Matriser {
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-        String matriseTilStreng = "";
+        String strengMatrise = "";
         for(int[] i : matrise){
             for(int j : i){
-                matriseTilStreng += j + " ";
+                strengMatrise += j + " ";
             }
-            matriseTilStreng += "\n";
+            strengMatrise += "\n";
         }
-        return matriseTilStreng;
+        return strengMatrise;
 
 	}
 
