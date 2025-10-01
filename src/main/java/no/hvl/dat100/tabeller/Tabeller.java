@@ -19,13 +19,12 @@ public class Tabeller {
         for (int i = 0; i < tabell.length; i++) {
             sb.append(tabell[i]);
             if (i < tabell.length - 1) {
-                sb.append(","); // add comma between numbers
+                sb.append(",");
             }
         }
         sb.append("]");
         return sb.toString();
     }
-
 
     // c)
     public static int summer(int[] tabell) {

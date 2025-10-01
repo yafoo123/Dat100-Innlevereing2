@@ -16,41 +16,64 @@ public class Matriser {
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-		
+        String matriseTilStreng = "";
+        for(int[] i : matrise){
+            for(int j : i){
+                matriseTilStreng += j + " ";
+            }
+            matriseTilStreng += "\n";
+        }
+        return matriseTilStreng;
+
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
-	
+
+        int radStrl = matrise.length;
+        int radlengde = matrise[0].length;
+
+        int [][] nyMatrise = new int[radStrl][radlengde];
+
+        for(int i = 0; i < matrise.length; i++){
+            for(int j = 0; j <radlengde; j++){
+                nyMatrise[i][j] = matrise[i][j] * tall;
+            }
+        }
+        return nyMatrise;
+
 	}
 
 	// d)
-	public static boolean erLik(int[][] a, int[][] b) {
+    public static boolean erLik(int[][] a, int[][] b) {
+        if(a == null && b == null){
+            return true;
+        }
+        if(a == null || b == null){
+            return false;
+        }
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
-		
-	}
-	
-	// e)
-	public static int[][] speile(int[][] matrise) {
+        if (a.length != b.length){
+            return false;
+        }
 
-		// TODO
+        for(int i = 0; i < a.length; i++){
+            if(a[i] == null && b[i] == null){
+                continue;
+            }
+            if(a[i] == null || b[i] == null){
+                return false;
+            }
+            if(a[i].length != b[i].length){
+                return false;
+            }
+            for(int j = 0; j < a[i].length; j++) {
+                if (a[i][j] != b[i][j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
-	
-	}
-
-	// f)
-	public static int[][] multipliser(int[][] a, int[][] b) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
-	
-	}
 }
